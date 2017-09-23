@@ -139,6 +139,12 @@ a {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
+
+}
+
+.flex-skills{
+  display: block;
+  box-sizing: border-box;
 }
 
 .flex-column {
@@ -159,8 +165,10 @@ ul {
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
-  display: none;
+   width: 300px; 
+  height: 200px;
+  margin-top: 20px;
+ 
 }
 
 img {
