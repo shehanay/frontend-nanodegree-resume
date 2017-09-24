@@ -1,9 +1,8 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-var name="Shehana Alsubaiy";
-var role="Web Devloper";
+
+
 var contacts={
+ name:"Shehana Alsubaiy",
+ role:"Web Devloper",
  mobile:"099-555-5555",
  email:"Shehana@example.com",
  github:"Shehanay",
@@ -65,7 +64,7 @@ projects:[
 	images:"images/EM puzzle unbounded unsined.png"
 }
          ]
-}
+};
 
 function displayProject (a){
  	$("#projects").append(HTMLprojectStart);
@@ -97,7 +96,7 @@ var education={
              url:"https://www.coursera.org"
 	                   }    
 	               ]    
-}
+};
  
 function displayEducation (a){
 $("#education").append(HTMLschoolStart);
@@ -110,8 +109,8 @@ var formattedDegree=HTMLschoolDegree.replace("%data%",a.schools[i].degree);
 var formattedDate=HTMLschoolDates.replace("%data%",a.schools[i].dates);
 var formattedLocation=HTMLschoolLocation.replace("%data%",a.schools[i].location);
 var formattedMajor=HTMLschoolMajor.replace("%data%",a.schools[i].majors[i]);                           
-var formattedSchool= formattedName + formattedDegree + formattedDate + formattedLocation  + formattedMajor;
-$(".education-entry:last ").append(formattedSchool);
+var formattedSchools= formattedName + formattedDegree + formattedDate + formattedLocation  + formattedMajor;
+$(".education-entry:last ").append(formattedSchools);
                                              }
 
 for (var j = 0; j < a.onlineCourses.length; j++)  {
@@ -126,10 +125,9 @@ $(".education-entry:last ").append(formattedOnlineCourses);
 
                                } 
  
-
- var formattedRole= HTMLheaderRole.replace("%data%", role);
+var formattedRole= HTMLheaderRole.replace("%data%", contacts.role);
  $("#header").prepend(formattedRole);
-var formattedName = HTMLheaderName.replace("%data%", name );
+var formattedName = HTMLheaderName.replace("%data%", contacts.name );
  $("#header").prepend(formattedName);
  
 var formattedMobile= HTMLmobile.replace("%data%", contacts.mobile);
