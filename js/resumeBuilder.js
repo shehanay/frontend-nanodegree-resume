@@ -85,7 +85,7 @@ var projects = {
         title: "Solving Edge Matching with SAT Solver ",
         dates: "2017",
         description: "This project is my BSc project and it about solving edge matching game with SAT solver ",
-        images: ["images/EM puzzle unbounded unsined.png"]
+        images: ["images/EM puzzle unbounded unsined.png","images/EM puzzle bounded unsined.png"]
     }],
     display: function() {
 // this function display all the values assigned to projects class  
@@ -94,10 +94,15 @@ var projects = {
             var formattedTitle = HTMLprojectTitle.replace(data, projects.projects[i].title);
             var formattedDate = HTMLprojectDates.replace(data, projects.projects[i].dates);
             var formattedDescription = HTMLprojectDescription.replace(data, projects.projects[i].description);
-            var formattedImages = HTMLprojectImage.replace(data, projects.projects[i].images);
-            var formattedProject = formattedTitle + formattedDate + formattedDescription + formattedImages;
-            $(".project-entry:last").append(formattedProject);
+            var formattedImages=undefined;
+               for(var j=0; j<projects.projects[i].images.length; j++){
+        	  formattedImages = HTMLprojectImage.replace(data, projects.projects[i].images[j]);
+        	$(".project-entry:last").append(formattedImages); 
         }
+          var formattedProject = formattedTitle + formattedDate + formattedDescription ;
+            $(".project-entry:last").prepend(formattedProject); 
+        }
+
     }
 };
 
